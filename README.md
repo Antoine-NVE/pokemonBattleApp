@@ -1,50 +1,37 @@
-# Welcome to your Expo app 👋
+# Application de recherche et de bataille entre pokémons
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Cette application est développée dans le cadre d'un cours de l'école MyDigitalSchool.
 
-## Get started
+## 1. Système de recherche
 
-1. Install dependencies
+- Interface pour rechercher un pokémon par son nom
+- Interface pour rechercher des pokémons par type
+- Interface pour rechercher les pokémons
+- Interface pour lister tous les pokémons
 
-   ```bash
-   npm install
-   ```
+## 2. Système de gain de pokémon
 
-2. Start the app
+Quand je lance l'appli pour la première fois, j'ai :
+- 10 de monnaie A
+- 0 de monnaie B
 
-   ```bash
-    npx expo start
-   ```
+En tant qu'utilisateur, j'ai de la monnaie qui me permet d'ouvrir des coffres.
 
-In the output, you'll find options to open the app in a
+- Interface pour récupérer des pokémons via des coffres
+- Interface de stockage des pokémons pour voir la liste de tous les pokémons que j'ai en stock
+- Pas de limite de stockage (on peut avoir 10000 pokémons ou plus dans notre wallet de pokémons)
+- Limite de stockage d'un même type de pokémon : par exemple pas plus de 10 pokémons
+- Possibilité de donner un nom à nos pokémons
+- Interface avec des coffres à ouvrir avec la monnaie de notre portefeuille
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Types de monnaie
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Monnaie de type A, B ou C.
+- Les monnaies permettent d'ouvrir les types de coffres correspondants, donc avec de la monnaie A je peux ouvrir un coffre de type A.
+   - A correspond à commun
+   - B correspond à rare
+   - C correspond à légendaire
 
-## Get a fresh project
+## 3. Système de combat
 
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+À venir.
