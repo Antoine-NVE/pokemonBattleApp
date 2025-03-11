@@ -1,13 +1,16 @@
-import { Text, View } from 'react-native';
-import React from 'react';
-import { Link } from 'expo-router';
+import { Text, TextInput, View } from 'react-native';
+import React, { useState } from 'react';
 
 const HomePage = () => {
-    return (
-        <View>
-            <Text>Home Page</Text>
+    const [pokemonName, setPokemonName] = useState('');
 
-            <Link href="/pokemon">Page pokémon</Link>
+    return (
+        <View className="flex items-center justify-center h-screen">
+            <Text className="text-3xl font-bold text-red-600">Home Page</Text>
+            <TextInput
+                className="bg-white rounded-md border border-gray-200 px-10 py-3"
+                placeholder="Entrez le nom du pokémon"
+            />
         </View>
     );
 };
