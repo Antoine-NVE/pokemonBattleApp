@@ -1,12 +1,14 @@
 import { Pressable, Text, TextInput, View } from 'react-native';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import { fetch } from 'expo/fetch';
 import { Image } from 'expo-image';
 import { Link } from 'expo-router';
+import { ProfileContext } from '@/components/contexts/ProfileContext';
 
 const HomePage = () => {
     const [pokemonName, setPokemonName] = useState('');
     const [results, setResults] = useState<{ id: number; name: string; image: string } | null>(null);
+    const { wallet } = useContext(ProfileContext);
 
     const handleSearch = useCallback(async () => {
         if (!pokemonName) return;
@@ -26,6 +28,7 @@ const HomePage = () => {
     return (
         <View className="flex items-center justify-center h-screen">
             <Text className="text-3xl font-bold text-red-600">Home Page</Text>
+            <Text>Mon wallet : {wallet}</Text>
             <TextInput
                 className="bg-white rounded-md border border-gray-200 px-10 py-3"
                 placeholder="Entrez le nom du pokémon"

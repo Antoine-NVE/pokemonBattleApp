@@ -6,6 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 import '../global.css';
+import { ProfileContextProvider } from '@/components/contexts/ProfileContext';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -27,11 +28,13 @@ export default function RootLayout() {
 
     return (
         <ThemeProvider value={DefaultTheme}>
-            <Stack>
-                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-                <Stack.Screen name="+not-found" />
-            </Stack>
-            <StatusBar hidden={true} />
+            <ProfileContextProvider>
+                <Stack>
+                    <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+                    <Stack.Screen name="+not-found" />
+                </Stack>
+                <StatusBar hidden={true} />
+            </ProfileContextProvider>
         </ThemeProvider>
     );
 }
