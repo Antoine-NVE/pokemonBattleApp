@@ -1,15 +1,32 @@
 import { createContext, useState, ReactNode } from 'react';
 
-export const ProfileContext = createContext<{ wallet: number; caught_pokemons: any[] }>({
+export const ProfileContext = createContext<{
+    wallet: number;
+    caught_pokemons: any[];
+    add_money: (money: number) => void;
+    substract_money: (money: number) => void;
+}>({
     wallet: 1000,
     caught_pokemons: [],
+    add_money: (money: number) => {},
+    substract_money: (money: number) => {},
 });
 
 export const ProfileContextProvider = ({ children }: { children: ReactNode }) => {
-    const [profile, setProfile] = useState<{ wallet: number; caught_pokemons: any[] }>({
-        wallet: 1000,
-        caught_pokemons: [],
-    });
+    const [wallet, setWallet] = useState(1000);
+    const [caught_pokemons, setCaughtPokemons] = useState([]);
 
-    return <ProfileContext.Provider value={profile}>{children}</ProfileContext.Provider>;
+    const add_money = (money: number) => {
+        setWallet(wallet + money);
+    };
+
+    const substract_money = (money: number) => {
+        setWallet(wallet - money);
+    };
+
+    return (
+        <ProfileContext.Provider value={{ wallet, caught_pokemons, add_money, substract_money }}>
+            {children}
+        </ProfileContext.Provider>
+    );
 };
