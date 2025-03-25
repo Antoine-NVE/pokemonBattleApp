@@ -35,18 +35,19 @@ const Pokemon = () => {
             <View className="flex flex-row w-full">
                 {pokemon?.apiPreEvolution?.pokedexIdd && (
                     <Link
-                        className="rounded-lg p-5 bg-white shadow-lg flex-1 text-center"
-                        href={`/(tabs)/pokemon/${pokemon?.apiPreEvolution.pokedexIdd}`}>
-                        Voir la pré-évolution
+                        className="rounded-lg p-5 bg-red-400 shadow-lg flex-1 text-center"
+                        href={`/(tabs)/pokemon/${pokemon.apiPreEvolution.pokedexIdd}`}>
+                        {pokemon.apiPreEvolution.name}
                     </Link>
                 )}
-                {pokemon?.apiEvolutions && pokemon?.apiEvolutions?.length > 0 && (
+                {pokemon?.apiEvolutions?.map((evolution) => (
                     <Link
-                        className="rounded-lg p-5 bg-white shadow-lg flex-1 text-center"
-                        href={`/(tabs)/pokemon/${pokemon?.apiEvolutions[0]?.pokedexId}`}>
-                        Voir l'évolution
+                        key={evolution.pokedexId}
+                        className="rounded-lg p-5 bg-green-400 shadow-lg flex-1 text-center"
+                        href={`/(tabs)/pokemon/${evolution.pokedexId}`}>
+                        {evolution.name}
                     </Link>
-                )}
+                ))}
             </View>
             <Link href="/">Retourner à l'accueil</Link>
         </View>
