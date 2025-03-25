@@ -14,9 +14,8 @@ const Pokemon = () => {
                     'Content-Type': 'application/json',
                 },
             });
-            const pokemon = await response.json();
 
-            setPokemon(pokemon);
+            setPokemon(await response.json());
         };
 
         fetchPokemon();
