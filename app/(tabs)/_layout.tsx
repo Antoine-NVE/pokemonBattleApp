@@ -14,7 +14,8 @@ const TabsLayout = () => {
                     },
                 }}
             />
-            <Tabs.Screen name="pokemon" options={{ headerShown: false, title: '' }} />
+            <Tabs.Screen name="pokemon" options={{ headerShown: false, href: null }} />
+            <Tabs.Screen name="pokemon/[id]" options={{ headerShown: false, href: null }} />
         </Tabs>
     );
 };

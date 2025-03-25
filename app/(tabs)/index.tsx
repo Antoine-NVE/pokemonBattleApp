@@ -2,6 +2,7 @@ import { Pressable, Text, TextInput, View } from 'react-native';
 import React, { useCallback, useState } from 'react';
 import { fetch } from 'expo/fetch';
 import { Image } from 'expo-image';
+import { Link } from 'expo-router';
 
 const HomePage = () => {
     const [pokemonName, setPokemonName] = useState('');
@@ -39,6 +40,7 @@ const HomePage = () => {
                     <Text className="text-2xl font-bold">
                         {results.name} {results.id}
                     </Text>
+                    <Link href={`/(tabs)/pokemon/${results?.id}`}>Voir la fiche</Link>
                 </View>
             )}
         </View>
